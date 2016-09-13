@@ -1,0 +1,12 @@
+<h1><%=@product.title%></h1>
+Being sold by: <strong><%= @user.name %></strong>
+<br>Description: <%= @product.description %>
+
+<p><%= link_to "Place a bid", "/products/#{@product.id}/bids/new"%></p>
+
+
+
+<!--IMPORTANCE OF INTERPOLATION 
+the :id is not valid anywhere but the route
+in any view, you need to put in within interpolation #{}
+in order for the value to be valid>

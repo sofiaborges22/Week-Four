@@ -1,0 +1,10 @@
+<form action="/asciis" method="post">
+  <div>
+    <label for="placeholder_paragraph"># of Paragraphs</label>
+    <text name="ascii[user_text]" id="ascii_user_text"></textarea>
+  </div>
+
+  <button type="submit">Submit text</button>
+  <input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+</form>

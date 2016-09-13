@@ -1,0 +1,21 @@
+
+<h5>Search for contact</h5>
+<form action="/contacts/search" method="POST">
+    <input type="search" name="user_search" id="search">
+    <button type="submit" name="search_contact">Search</button>
+ </form>
+
+<ul>
+<% @contacts.each do |contact| %>
+		<li><%= contact.name%></li>
+		<%= link_to "View info", "/contacts/"  + contact.id.to_s %>
+
+			<form action="/favorites/add" method="POST">
+				<button type="submit" name="contact_id" value=<%=contact.id%>>Favorites</button>
+			</form>
+
+<% end %>
+</ul>
+
+<%= link_to "Add another contact", "/contacts/new"%>
+<%= link_to "Favorites list", "/favorites"%>
